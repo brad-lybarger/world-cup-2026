@@ -46,7 +46,7 @@ fun MatchDto.toDomain(): Match {
     return Match(
         id = id,
         stage = stageOf(stage),
-        group = group,
+        group = group?.removePrefix("GROUP_"), // API uses "GROUP_A"; we key brackets by "A"
         homeTeam = home,
         awayTeam = away,
         homeGoals = score?.fullTime?.home,

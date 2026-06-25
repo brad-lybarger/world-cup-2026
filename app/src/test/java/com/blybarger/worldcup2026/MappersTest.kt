@@ -31,6 +31,7 @@ class MappersTest {
         val m = dto.toDomain()
 
         assertEquals(Stage.GROUP_STAGE, m.stage)
+        assertEquals("A", m.group) // "GROUP_A" normalized to "A"
         assertEquals(MatchStatus.FINISHED, m.status)
         assertEquals("MEX", m.homeTeam?.id)
         assertEquals(11, m.homeTeam?.fifaRank) // Mexico
